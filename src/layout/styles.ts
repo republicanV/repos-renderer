@@ -1,0 +1,16 @@
+import styled from 'styled-components';
+
+export const Content = styled.main`
+    flex: auto;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: ${props => props.theme.colors.main};
+    padding: ${props => props.theme.spaces.default};
+`;
+
+export const Title = styled.h1`
+    font-size: 1.5em;
+    text-align: center;
+    color: ${props => props.theme.colors.main};
+`;
