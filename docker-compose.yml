@@ -1,0 +1,21 @@
+version: "3"
+services:
+    dev:
+      container_name: repos-renderer
+      build:
+        context: .
+      ports:
+        - 4680:3000
+      stdin_open: true
+      environment:
+        - NODE_ENV=development
+      command: npm start
+      
+    test:
+      build:
+        context: .
+      environment:
+        - CI=true
+      command: npm test
+      volumes:
+        - './:/usr/src/app'
