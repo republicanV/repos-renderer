@@ -1,32 +1,25 @@
-import gql from 'graphql-tag';
+import gql from "graphql-tag";
 
 export const GET_REPOS = gql`
-    query($search_term: String!, $first: Int) {
-        search(query: $search_term, type: REPOSITORY, first: $first) {
-            repositoryCount,
-            edges {
-                node {
-                    ... on Repository {
-                        id,
-                        name,
-                        owner {
-                            login
-                        },
-                        url,
-                        stargazers {
-                            totalCount
-                        },
-                        forkCount,
-                    }
-                }
+  query($search_term: String!, $first: Int) {
+    search(query: $search_term, type: REPOSITORY, first: $first) {
+      repositoryCount
+      edges {
+        node {
+          ... on Repository {
+            id
+            name
+            owner {
+              login
             }
-
-            pageInfo {
-                startCursor
-                endCursor
-                hasNextPage
-                hasPreviousPage
+            url
+            stargazers {
+              totalCount
             }
+            forkCount
+          }
         }
+      }
     }
+  }
 `;
