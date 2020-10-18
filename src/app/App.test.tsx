@@ -1,9 +1,16 @@
+// External dependencies
 import React from "react";
-import { render } from "@testing-library/react";
+import ReactDOM from "react-dom";
+import { cleanup } from "@testing-library/react";
+
+// Local modules
 import App from "app/App";
 
-test("renders learn react link", () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/ind some repositories on GitHub/i);
-  expect(linkElement).toBeInTheDocument();
+describe("<App />", () => {
+  afterEach(cleanup);
+
+  it("renders without crashing", () => {
+    const div = document.createElement("div");
+    ReactDOM.render(<App />, div);
+  });
 });
