@@ -16,6 +16,30 @@ const repositoryListProps = {
   hasNoRepositoryCount: false,
 };
 
+const repositoryListLoadingProps = {
+  currentRepos: [],
+  handleChangePage: () => {},
+  loading: true,
+  error: false,
+  hasNoRepositoryCount: false,
+};
+
+const repositoryListErrorProps = {
+  currentRepos: [],
+  handleChangePage: () => {},
+  loading: false,
+  error: true,
+  hasNoRepositoryCount: false,
+};
+
+const repositoryListNoResultsProps = {
+  currentRepos: [],
+  handleChangePage: () => {},
+  loading: false,
+  error: false,
+  hasNoRepositoryCount: true,
+};
+
 describe("<RepositoryList />", () => {
   afterEach(cleanup);
 
@@ -43,5 +67,37 @@ describe("<RepositoryList />", () => {
     // Displays fork count of the repository
     const forksCountElement = getByText(/31140/i);
     expect(forksCountElement).toBeInTheDocument();
+  });
+
+  it("shows spinner when the data is loading", () => {
+    const { container } = render(
+      <RepositoryList {...repositoryListLoadingProps} />,
+      []
+    );
+
+    const spinnerElement = container.querySelector(
+      "div.ant-spin.ant-spin-spinning"
+    );
+    expect(spinnerElement).toBeInTheDocument();
+  });
+
+  it("shows error message if there is one there", async () => {
+    const { getByText } = render(
+      <RepositoryList {...repositoryListErrorProps} />,
+      []
+    );
+
+    const errorMessageElement = getByText(/Something went wrong. Try again\?/i);
+    expect(errorMessageElement).toBeInTheDocument();
+  });
+
+  it("shows corresponding message if there are no results", () => {
+    const { getByText } = render(
+      <RepositoryList {...repositoryListNoResultsProps} />,
+      []
+    );
+
+    const noResultsElement = getByText(/No repositories yet/i);
+    expect(noResultsElement).toBeInTheDocument();
   });
 });
