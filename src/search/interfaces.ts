@@ -1,4 +1,4 @@
 export interface ISearchInputProps {
-    handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
-    value: string;
-};
+  handleChangeValue: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  value: string;
+}
