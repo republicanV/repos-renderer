@@ -8,8 +8,8 @@ import LayoutWrapper from "layout/LayoutWrapper";
 import SearchInput from "search/SearchInput";
 import RepositoryList from "repository/RepositoryList";
 import { GET_REPOS } from "api/queries";
-import { getCurrentRepos } from "repository/utils";
-import { DELAY_MSEC, ITEMS_COUNT } from "repository/constants";
+import { getCurrentRepos } from "layout/utils";
+import { DELAY_MSEC, ITEMS_COUNT } from "layout/constants";
 
 const LayoutContainer: FC = () => {
   const [searchTerm, setSearchTerm] = useState("react");
