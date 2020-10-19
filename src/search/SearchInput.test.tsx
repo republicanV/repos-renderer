@@ -11,19 +11,19 @@ describe("<SearchInput />", () => {
   afterEach(cleanup);
 
   it("renders successfully", () => {
-    const { getByLabelText } = render(
+    const { container } = render(
       <SearchInput handleChangeValue={() => {}} value="" />,
       []
     );
-    const searchElement = getByLabelText(/search/i);
 
-    expect(searchElement).toBeInTheDocument();
+    const searchElement = container.querySelector("input");
+    expect(searchElement).toHaveAttribute("placeholder", "Search (i.e. React)");
   });
 
   it("has a proper search value", () => {
     render(<SearchInput handleChangeValue={() => {}} value="react" />, []);
-    const inputElement = screen.getByDisplayValue(/react/i);
 
+    const inputElement = screen.getByDisplayValue(/react/i);
     expect(inputElement).toBeTruthy();
   });
 });
