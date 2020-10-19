@@ -3,7 +3,7 @@ import React from "react";
 import { cleanup } from "@testing-library/react";
 
 // Local modules
-import CustomHeader from "layout/CustomHeader";
+import CustomHeader from "header/CustomHeader";
 import { render } from "utils/test-utils";
 
 describe("<CustomHeader />", () => {
