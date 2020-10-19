@@ -17,5 +17,5 @@ export interface IRepositoryListProps {
   handleChangePage: (page: number, pageSize: number) => void;
   loading: boolean;
   error: any;
-  hasRepositoryCount: boolean;
+  hasNoRepositoryCount: boolean;
 }

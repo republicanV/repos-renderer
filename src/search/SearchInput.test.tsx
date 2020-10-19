@@ -12,7 +12,7 @@ describe("<SearchInput />", () => {
 
   it("renders successfully", () => {
     const { getByLabelText } = render(
-      <SearchInput handleChange={() => {}} value="" />,
+      <SearchInput handleChangeValue={() => {}} value="" />,
       []
     );
     const searchElement = getByLabelText(/search/i);
@@ -21,7 +21,7 @@ describe("<SearchInput />", () => {
   });
 
   it("has a proper search value", () => {
-    render(<SearchInput handleChange={() => {}} value="react" />, []);
+    render(<SearchInput handleChangeValue={() => {}} value="react" />, []);
     const inputElement = screen.getByDisplayValue(/react/i);
 
     expect(inputElement).toBeTruthy();

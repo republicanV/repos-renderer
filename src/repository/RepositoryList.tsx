@@ -13,7 +13,7 @@ const RepositoryList: FC<IRepositoryListProps> = ({
   handleChangePage,
   loading,
   error,
-  hasRepositoryCount,
+  hasNoRepositoryCount,
 }) => {
   const IconText = ({ icon, text }: any) => (
     <Space>
@@ -32,7 +32,7 @@ const RepositoryList: FC<IRepositoryListProps> = ({
   }
 
   // Show message if there are no repositories
-  if (hasRepositoryCount) {
+  if (hasNoRepositoryCount) {
     return <StyledTypography>{TEXT_NO_RESULTS}</StyledTypography>;
   }
 
@@ -83,6 +83,7 @@ const RepositoryList: FC<IRepositoryListProps> = ({
           />
         </List.Item>
       )}
+      data-testid="repos-list"
     />
   );
 };

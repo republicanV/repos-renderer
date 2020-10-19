@@ -70,7 +70,7 @@ const LayoutContainer: FC = () => {
         handleChangePage={handleChangePage}
         loading={loading}
         error={error}
-        hasRepositoryCount={!data?.search?.repositoryCount}
+        hasNoRepositoryCount={!data?.search?.repositoryCount}
       />
     </LayoutWrapper>
   );
