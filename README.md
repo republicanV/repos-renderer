@@ -5,8 +5,8 @@ This project is using the GitHub GrapQL API v4 for fetching the list of repos.
 See the [GitHub GraphQL API documentation](https://docs.github.com/graphql) for more information.
 
 ## To build the App:
-1. git clone `git@github.com:republicanV/repos-renderer.git`
-2. cd `repos-renderer`
+1. `git clone git@github.com:republicanV/repos-renderer.git`
+2. `cd repos-renderer`
 3. `yarn`
 4. You need to have an Access Token to see the list of repos.
 See the [Creating a personal access token documentation](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/creating-a-personal-access-token) for more information.
