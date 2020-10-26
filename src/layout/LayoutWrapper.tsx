@@ -7,13 +7,11 @@ import CustomHeader from "header/CustomHeader";
 import { ILayoutWrapperProps } from "layout/interfaces";
 import { Content } from "layout/styles";
 
-const LayoutWrapper: FC<ILayoutWrapperProps> = ({ children }) => {
-  return (
-    <Layout>
-      <CustomHeader />
-      <Content>{children}</Content>
-    </Layout>
-  );
-};
+const LayoutWrapper: FC<ILayoutWrapperProps> = ({ children }) => (
+  <Layout>
+    <CustomHeader />
+    <Content>{children}</Content>
+  </Layout>
+);
 
 export default LayoutWrapper;
